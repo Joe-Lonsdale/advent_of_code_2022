@@ -16,7 +16,6 @@ def main():
     file = open(filename, "r")
     stacks = fill_stacks()
     for line in file:
-        number, source, dest = 0,0,0
         line = line.replace('\n', '')
         if len(line) == 0:
             continue
@@ -36,9 +35,12 @@ def main():
             for i in range(number):
                 stacks[dest].append(temp.pop())
 
+    answer = ""
     for i in stacks:
         top = i.pop()
-        print(top)
+        answer += top
+
+    print(answer)
 
 
 
